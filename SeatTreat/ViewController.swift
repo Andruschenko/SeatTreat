@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Font_Awesome_Swift  // change dashes to underscores..
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var hotIcon: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hotIcon.setFAIcon(FAType.FAGithub, iconSize: 35)
+        hotIcon.tintColor = UIColor.whiteColor()
         
         let baseURL = NSURL(string: "http://172.16.105.236:5000/")
         
