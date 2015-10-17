@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let baseURL = NSURL(string: "http://172.16.105.236:5000/")
+        
+        // get the current phase of the flight
+        let url = NSURL(string: "Phase", relativeToURL: baseURL)
+        
+        let networkOperation = NetworkOperation(url: url!)
+        networkOperation.downloadJSONFromURL()
     }
 
     override func didReceiveMemoryWarning() {
