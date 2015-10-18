@@ -1,5 +1,5 @@
 //
-//  AuctionSeatViewController.swift
+//  FlightDetailViewController.swift
 //  SeatTreat
 //
 //  Created by Andru on 18/10/15.
@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
 
-class AuctionSeatViewController: UIViewController {
+class FlightDetailViewController: UIViewController {
 
-    @IBOutlet weak var currentBidPriceLabel: UILabel!
+    @IBOutlet weak var planeIcon: UILabel!
+    @IBOutlet weak var flightInformationView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        planeIcon.setFAIcon(FAType.FAPlane, iconSize: planeIcon.font.pointSize)
+        
+        flightInformationView.layer.borderWidth = 0.5
+        flightInformationView.layer.borderColor = UIColor(red: 102/255.0, green: 134/255.0, blue: 183/255.0, alpha: 1.0).CGColor
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A879C191BD378420083DD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A879C181BD378420083DD29 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		1A879C1B1BD392130083DD29 /* FlightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A879C1A1BD392130083DD29 /* FlightDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1AF496911BD2A51A00AF0A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF496901BD2A51A00AF0A46 /* AppDelegate.swift */; };
 		1AF496931BD2A51A00AF0A46 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF496921BD2A51A00AF0A46 /* MainPageViewController.swift */; };
 		1AF496961BD2A51A00AF0A46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF496941BD2A51A00AF0A46 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		0C0781AD125AE84FC88E2F2A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1A879C181BD378420083DD29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A879C1A1BD392130083DD29 /* FlightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailViewController.swift; sourceTree = "<group>"; };
 		1AF4968D1BD2A51A00AF0A46 /* SeatTreat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatTreat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF496901BD2A51A00AF0A46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AF496921BD2A51A00AF0A46 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1AF496921BD2A51A00AF0A46 /* MainPageViewController.swift */,
 				1AF496C81BD36F9600AF0A46 /* AuctionSeatViewController.swift */,
 				1AF496BE1BD2A53B00AF0A46 /* NetworkOperation.swift */,
+				1A879C1A1BD392130083DD29 /* FlightDetailViewController.swift */,
 				1AF496941BD2A51A00AF0A46 /* Main.storyboard */,
 				1AF496991BD2A51A00AF0A46 /* LaunchScreen.storyboard */,
 				1AF4969C1BD2A51A00AF0A46 /* Info.plist */,
@@ -367,6 +370,7 @@
 			files = (
 				1AF496931BD2A51A00AF0A46 /* MainPageViewController.swift in Sources */,
 				1AF496BF1BD2A53B00AF0A46 /* NetworkOperation.swift in Sources */,
+				1A879C1B1BD392130083DD29 /* FlightDetailViewController.swift in Sources */,
 				BCCA49BA1BD38F9900D92957 /* Seat.swift in Sources */,
 				1AF496911BD2A51A00AF0A46 /* AppDelegate.swift in Sources */,
 				1AF496C91BD36F9600AF0A46 /* AuctionSeatViewController.swift in Sources */,
