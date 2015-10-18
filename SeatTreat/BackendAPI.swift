@@ -42,7 +42,7 @@ class BackendAPI {
     }
     
     class func getSeat(key: String, completionHandler: (seat: Seat) -> Void){
-        print("run loadAVailableSeats")
+        print("run getSeat")
         Alamofire.request(.GET, "http://seattreat.eu-gb.mybluemix.net/seat/"+key)
             .responseJSON { response in
                 
@@ -52,6 +52,25 @@ class BackendAPI {
                     let jsonObj = JSON(json)
                     
                         seat = Seat(column: jsonObj["column"].stringValue, row: jsonObj["row"].intValue, minutesLeft: jsonObj["minutesLeft"].intValue, secondsLeft: jsonObj["secondsLeft"].intValue, temperature: jsonObj["temperature"].intValue, sold: false, seatPosition: jsonObj["seatPosition"].stringValue, currentBidder: jsonObj["currentBidder"].stringValue, compartment: jsonObj["compartment"].stringValue, price: jsonObj["price"].intValue)
+                    
+                }
+                
+                completionHandler(seat: seat)
+                
+        }
+    }
+    
+    class func bidSeat(seatkey: String, bid: Int, user: String, completionHandler: (seat: Seat) -> Void){
+        print("run bidSeat")
+        Alamofire.request(.GET, "http://seattreat.eu-gb.mybluemix.net/bidOnSeat", parameters: ["key": seatkey, "bid": bid, "user": user])
+            .responseJSON { response in
+                
+                var seat: Seat!
+                
+                if let json = response.result.value {
+                    let jsonObj = JSON(json)
+                    
+                    seat = Seat(column: jsonObj["column"].stringValue, row: jsonObj["row"].intValue, minutesLeft: jsonObj["minutesLeft"].intValue, secondsLeft: jsonObj["secondsLeft"].intValue, temperature: jsonObj["temperature"].intValue, sold: false, seatPosition: jsonObj["seatPosition"].stringValue, currentBidder: jsonObj["currentBidder"].stringValue, compartment: jsonObj["compartment"].stringValue, price: jsonObj["price"].intValue)
                     
                 }
                 
