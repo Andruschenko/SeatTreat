@@ -8,23 +8,35 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class BackendAPI {
 
-    class func loadAvailableSeats(completionHandler: (response: Response<AnyObject, NSError>) -> Void){
+    class func loadAvailableSeats(completionHandler: (seatArray: [Seat]) -> Void){
     print("run loadAVailableSeats")
     Alamofire.request(.GET, "http://seattreat.eu-gb.mybluemix.net/availableSeats")
         .responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+            //print(response.request)  // original URL request
+            //print(response.response) // URL response
+            //print(response.data)     // server data
+            //print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            var seatList = [Seat]()
+            
+            if let json = response.result.value {
+                let jsonObj = JSON(json)
+                
+                //If json is .Dictionary
+                for (key,subJson):(String, JSON) in jsonObj {
+                    let seat = Seat(column: subJson["column"].stringValue, row: subJson["row"].intValue, minutesLeft: subJson["minutesLeft"].intValue, secondsLeft: subJson["secondsLeft"].intValue, temperature: subJson["temperature"].intValue, sold: false, seatPosition: subJson["seatPosition"].stringValue, currentBidder: subJson["currentBidder"].stringValue, compartment: subJson["compartment"].stringValue, price: subJson["price"].intValue)
+
+                    seatList.append(seat)
+
+                }
+                
             }
             
-            completionHandler(response: response)
+            completionHandler(seatArray: seatList)
             
         }
     }

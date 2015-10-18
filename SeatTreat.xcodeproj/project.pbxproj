@@ -22,6 +22,7 @@
 		6B4EFF29D965566B5F1FA425 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735522F5FA444CFDF7F44BA1 /* Pods.framework */; };
 		BC9391911BD3767C00546BE1 /* BackendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9391901BD3767C00546BE1 /* BackendAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		BC9391931BD3768B00546BE1 /* BackendAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9391921BD3768B00546BE1 /* BackendAPITests.swift */; settings = {ASSET_TAGS = (); }; };
+		BCCA49BA1BD38F9900D92957 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA49B91BD38F9900D92957 /* Seat.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		735522F5FA444CFDF7F44BA1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9391901BD3767C00546BE1 /* BackendAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendAPI.swift; sourceTree = "<group>"; };
 		BC9391921BD3768B00546BE1 /* BackendAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendAPITests.swift; sourceTree = "<group>"; };
+		BCCA49B91BD38F9900D92957 /* Seat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seat.swift; path = Domainobjects/Seat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				1AF496C21BD2E66300AF0A46 /* TopSeatView.swift */,
 				1AF496C41BD3089F00AF0A46 /* Icons.xcassets */,
 				1A879C181BD378420083DD29 /* Assets.xcassets */,
+				BCCA49BB1BD38F9F00D92957 /* Domainobjects */,
 			);
 			path = SeatTreat;
 			sourceTree = "<group>";
@@ -159,6 +162,14 @@
 				735522F5FA444CFDF7F44BA1 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCCA49BB1BD38F9F00D92957 /* Domainobjects */ = {
+			isa = PBXGroup;
+			children = (
+				BCCA49B91BD38F9900D92957 /* Seat.swift */,
+			);
+			name = Domainobjects;
 			sourceTree = "<group>";
 		};
 		D7705EDD3AE1D4D9430C1B0A /* Pods */ = {
@@ -356,6 +367,7 @@
 			files = (
 				1AF496931BD2A51A00AF0A46 /* MainPageViewController.swift in Sources */,
 				1AF496BF1BD2A53B00AF0A46 /* NetworkOperation.swift in Sources */,
+				BCCA49BA1BD38F9900D92957 /* Seat.swift in Sources */,
 				1AF496911BD2A51A00AF0A46 /* AppDelegate.swift in Sources */,
 				1AF496C91BD36F9600AF0A46 /* AuctionSeatViewController.swift in Sources */,
 				1AF496C31BD2E66300AF0A46 /* TopSeatView.swift in Sources */,

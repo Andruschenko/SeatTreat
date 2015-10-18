@@ -15,8 +15,9 @@ func testLoadAvailableSeats() {
     
     let expectation = expectationWithDescription("Swift Expectations")
     
-    BackendAPI.loadAvailableSeats { response in
+    BackendAPI.loadAvailableSeats { seatList in
         print("finished")
+        seatList[0].printSeat()
         
         XCTAssert(true)
         expectation.fulfill()
