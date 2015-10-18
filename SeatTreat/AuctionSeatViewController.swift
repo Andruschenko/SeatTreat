@@ -11,10 +11,17 @@ import UIKit
 class AuctionSeatViewController: UIViewController {
 
     @IBOutlet weak var currentBidPriceLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var seatNumberLabel: UILabel!
+    
+    var seat: Seat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        currentBidPriceLabel.text = String(self.seat.price) + " €"
+        temperatureLabel.text = String(self.seat.temperature)
+        seatNumberLabel.text = self.seat.column + String(self.seat.row) + ", " + self.seat.seatPosition
     }
 
     override func didReceiveMemoryWarning() {
