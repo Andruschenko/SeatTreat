@@ -13,6 +13,10 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet weak var hotIcon: UILabel!
     
+    @IBOutlet weak var seatImage0: TopSeatView!
+    @IBOutlet weak var seatImage1: TopSeatView!
+    @IBOutlet weak var seatImage2: TopSeatView!
+    @IBOutlet weak var seatImage3: TopSeatView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

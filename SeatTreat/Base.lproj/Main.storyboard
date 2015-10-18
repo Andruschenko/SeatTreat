@@ -68,8 +68,11 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="FirstClass"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-ei-phn" customClass="TopSeatView" customModule="SeatTreat" customModuleProvider="target">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-ei-phn" customClass="TopSeatView" customModule="SeatTreat" customModuleProvider="target">
                                 <rect key="frame" x="161" y="222" width="157" height="156"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="ExitRow"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hot icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-On-ST7">
                                 <rect key="frame" x="206" y="21" width="84" height="29"/>
@@ -114,6 +117,10 @@
                     <navigationItem key="navigationItem" title="Top Auctions" id="oyy-kj-AdE"/>
                     <connections>
                         <outlet property="hotIcon" destination="sHU-On-ST7" id="ZRT-bb-Jl7"/>
+                        <outlet property="seatImage0" destination="SqR-eS-epb" id="ixC-Px-OZP"/>
+                        <outlet property="seatImage1" destination="sQX-KW-BWb" id="gpm-0M-DUp"/>
+                        <outlet property="seatImage2" destination="DmH-gG-gRT" id="Yzi-Tj-Sx4"/>
+                        <outlet property="seatImage3" destination="zPg-ei-phn" id="pQg-MS-RtD"/>
                         <segue destination="Ypc-Ss-k6F" kind="push" identifier="showAuctionDetailSegue" id="oWS-r6-GMp"/>
                     </connections>
                 </viewController>
@@ -303,7 +310,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXJ-yV-0kB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="226"/>
+            <point key="canvasLocation" x="-200" y="442"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XpR-UF-E0F">
@@ -523,6 +530,7 @@
     </scenes>
     <resources>
         <image name="BusinessClass" width="450" height="331"/>
+        <image name="ExitRow" width="250" height="187"/>
         <image name="FirstClass" width="400" height="263"/>
         <image name="PremiumEconomy" width="512" height="341"/>
     </resources>
