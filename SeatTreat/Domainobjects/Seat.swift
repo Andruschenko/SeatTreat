@@ -19,6 +19,7 @@ class Seat {
     var currentBidder: String
     var compartment: String
     var price: Int
+    var description: String = ""
     
     init(column: String, row: Int, minutesLeft: Int, secondsLeft: Int, temperature: Int, sold: Bool, seatPosition: String,
         currentBidder: String, compartment: String, price: Int)
