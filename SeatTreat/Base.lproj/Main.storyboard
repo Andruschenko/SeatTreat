@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="96" y="226"/>
         </scene>
-        <!--View Controller-->
+        <!--Auction Seat View Controller-->
         <scene sceneID="7l2-1s-AYc">
             <objects>
-                <viewController id="Ypc-Ss-k6F" sceneMemberID="viewController">
+                <viewController id="Ypc-Ss-k6F" customClass="AuctionSeatViewController" customModule="SeatTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2cd-1u-P6L"/>
                         <viewControllerLayoutGuide type="bottom" id="7aW-r4-xGF"/>
