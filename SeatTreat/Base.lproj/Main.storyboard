@@ -339,6 +339,7 @@
                         <outlet property="detailsLabel" destination="pH5-5A-cNT" id="ytI-OY-kdW"/>
                         <outlet property="seatNumberLabel" destination="LSK-Ap-WBk" id="XXE-8K-YuH"/>
                         <outlet property="temperatureLabel" destination="9Ar-HJ-RWg" id="Egs-5D-PGF"/>
+                        <outlet property="titleLabel" destination="w94-07-4Fj" id="0kv-sk-Jw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjV-ub-uyR" userLabel="First Responder" sceneMemberID="firstResponder"/>

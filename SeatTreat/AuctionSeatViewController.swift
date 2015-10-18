@@ -18,6 +18,8 @@ class AuctionSeatViewController: UIViewController {
     @IBOutlet weak var bidAmount: UITextField!
     
     @IBOutlet weak var currentBid: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     
     var seat: Seat!
     var myCurrentBid: Int = 0
@@ -46,12 +48,16 @@ class AuctionSeatViewController: UIViewController {
         switch self.seat.row {
         case 1:
             detailsLabel.text = "The best seats offered. Luxurious dinner à la carte included."
+            titleLabel.text = "Excellent First Class Seat"
         case 12:
             detailsLabel.text = "Comfortable and quiet business seat so that you can focus on what is important."
+            titleLabel.text = "A* Business Class Seat"
         case 27:
             detailsLabel.text = "A premium class seat with a bigger screen and tasteful food."
+            titleLabel.text = "A* Premium Economy Seat"
         default:
             detailsLabel.text = "Fulfills all basic needs and provides a pleasant experience"
+            titleLabel.text = "Standard Economy Class Seat"
             
         }
         
@@ -76,8 +82,6 @@ class AuctionSeatViewController: UIViewController {
     }
     
     func showBiddingResult() {
-        print("mycurrentbid: \(self.myCurrentBid)")
-        print("self.seat.price \(self.seat.price)")
         if (self.myCurrentBid < self.seat.price) {
             currentBid.textColor = UIColor.redColor()
         } else {
