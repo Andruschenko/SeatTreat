@@ -11,7 +11,7 @@ import Alamofire
 
 class BackendAPI {
 
-class func loadAvailableSeats() {
+    class func loadAvailableSeats(completionHandler: (response: Response<AnyObject, NSError>) -> Void){
     print("run loadAVailableSeats")
     Alamofire.request(.GET, "http://seattreat.eu-gb.mybluemix.net/availableSeats")
         .responseJSON { response in
@@ -24,6 +24,9 @@ class func loadAvailableSeats() {
                 print("JSON: \(JSON)")
             }
             
+            completionHandler(response: response)
+            
         }
     }
+    
 }
