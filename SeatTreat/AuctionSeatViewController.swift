@@ -58,6 +58,14 @@ class AuctionSeatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showBiddingResult() {
+        if (Int(self.bidAmount.text!) > self.seat.price) {
+            currentBid.textColor = UIColor.redColor()
+        } else {
+            currentBid.textColor = UIColor.greenColor()
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
