@@ -51,6 +51,16 @@ class AuctionSeatViewController: UIViewController {
             detailsLabel.text = "Fulfills all basic needs and provides a pleasant experience"
             
         }
+        
+        // refresh values every seconds
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "update", userInfo: nil, repeats: true)
+    }
+    
+    func update() {
+        BackendAPI.getSeat(String(self.seat.row) + self.seat.column) { seat in
+            self.currentBid.text = String(seat.price) + " €"
+            self.bidAmount.placeholder = String(seat.price + 5)
+        }
     }
 
     override func didReceiveMemoryWarning() {
