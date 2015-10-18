@@ -17,10 +17,18 @@ class AuctionSeatViewController: UIViewController {
     
     @IBOutlet weak var bidAmount: UITextField!
     
+    @IBOutlet weak var currentBid: UILabel!
     var seat: Seat!
     
     @IBAction func bidNowAction(sender: AnyObject) {
         
+        
+        BackendAPI.bidSeat(String(self.seat.row) + self.seat.column, bid: Int(bidAmount.text!)!, user: "Mike") { seat in
+            self.seat = seat
+            self.currentBid.text = String(seat.price) + " €"
+            self.bidAmount.placeholder = String(seat.price + 5)
+            self.bidAmount.text = ""
+        }
     }
     
     
@@ -30,6 +38,8 @@ class AuctionSeatViewController: UIViewController {
         currentBidPriceLabel.text = String(self.seat.price) + " €"
         temperatureLabel.text = String(self.seat.temperature) + "˚"
         seatNumberLabel.text = self.seat.column + String(self.seat.row) + ", " + self.seat.seatPosition.capitalizedString
+        bidAmount.placeholder = String(seat.price + 5)
+        
         switch self.seat.row {
         case 1:
             detailsLabel.text = "The best seats offered. Luxurious dinner à la carte included."

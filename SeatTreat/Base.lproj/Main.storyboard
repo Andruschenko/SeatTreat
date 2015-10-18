@@ -185,7 +185,9 @@
                                 <state key="normal" title="Bid now!"/>
                                 <connections>
                                     <action selector="bidNowAction:" destination="Ypc-Ss-k6F" eventType="touchUpInside" id="uif-pr-ZSD"/>
-                                    <segue destination="4B7-ri-swQ" kind="push" id="An5-oY-aRU"/>
+                                    <segue destination="4B7-ri-swQ" kind="popover" popoverAnchorView="bTT-WR-yZa" id="An5-oY-aRU">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-55-0ga">
@@ -335,6 +337,7 @@
                     <navigationItem key="navigationItem" title="Running Auction" id="27G-Dy-76r"/>
                     <connections>
                         <outlet property="bidAmount" destination="gS4-Nd-Izq" id="fAp-6V-HBT"/>
+                        <outlet property="currentBid" destination="QLc-MO-nFE" id="4ku-gY-Rnr"/>
                         <outlet property="currentBidPriceLabel" destination="QLc-MO-nFE" id="2Q7-8z-3lD"/>
                         <outlet property="detailsLabel" destination="pH5-5A-cNT" id="ytI-OY-kdW"/>
                         <outlet property="seatNumberLabel" destination="LSK-Ap-WBk" id="XXE-8K-YuH"/>
@@ -529,7 +532,7 @@
                                 <state key="normal" title="View all auctions"/>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ih2-xB-jtV">
-                                <rect key="frame" x="49" y="169" width="240" height="128"/>
+                                <rect key="frame" x="40" y="102" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af3-yf-StN">
                                         <rect key="frame" x="8" y="8" width="44" height="24"/>
@@ -549,6 +552,10 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-eL-Gxl">
+                                        <rect key="frame" x="0.0" y="42" width="240" height="43"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </view>
                         </subviews>
