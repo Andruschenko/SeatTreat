@@ -68,8 +68,11 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="FirstClass"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-ei-phn" customClass="TopSeatView" customModule="SeatTreat" customModuleProvider="target">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-ei-phn" customClass="TopSeatView" customModule="SeatTreat" customModuleProvider="target">
                                 <rect key="frame" x="161" y="222" width="157" height="156"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="ExitRow"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hot icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-On-ST7">
                                 <rect key="frame" x="206" y="21" width="84" height="29"/>
@@ -527,6 +530,7 @@
     </scenes>
     <resources>
         <image name="BusinessClass" width="450" height="331"/>
+        <image name="ExitRow" width="250" height="187"/>
         <image name="FirstClass" width="400" height="263"/>
         <image name="PremiumEconomy" width="512" height="341"/>
     </resources>
