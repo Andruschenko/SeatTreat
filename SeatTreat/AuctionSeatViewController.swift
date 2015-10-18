@@ -18,10 +18,13 @@ class AuctionSeatViewController: UIViewController {
     @IBOutlet weak var bidAmount: UITextField!
     
     @IBOutlet weak var currentBid: UILabel!
+    
     var seat: Seat!
+    var myCurrentBid: Int = 0
     
     @IBAction func bidNowAction(sender: AnyObject) {
         
+        myCurrentBid = Int(bidAmount.text!)!
         
         BackendAPI.bidSeat(String(self.seat.row) + self.seat.column, bid: Int(bidAmount.text!)!, user: "Mike") { seat in
             self.seat = seat
@@ -58,8 +61,12 @@ class AuctionSeatViewController: UIViewController {
     
     func update() {
         BackendAPI.getSeat(String(self.seat.row) + self.seat.column) { seat in
+            
+            self.seat = seat
+            self.showBiddingResult()
             self.currentBid.text = String(seat.price) + " €"
             self.bidAmount.placeholder = String(seat.price + 5)
+            
         }
     }
 
@@ -69,7 +76,9 @@ class AuctionSeatViewController: UIViewController {
     }
     
     func showBiddingResult() {
-        if (Int(self.bidAmount.text!) > self.seat.price) {
+        print("mycurrentbid: \(self.myCurrentBid)")
+        print("self.seat.price \(self.seat.price)")
+        if (self.myCurrentBid < self.seat.price) {
             currentBid.textColor = UIColor.redColor()
         } else {
             currentBid.textColor = UIColor.greenColor()
