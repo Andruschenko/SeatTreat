@@ -18,6 +18,8 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var seatImage2: TopSeatView!
     @IBOutlet weak var seatImage3: TopSeatView!
     
+    var seat: Seat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,8 +30,21 @@ class MainPageViewController: UIViewController {
         // get the current phase of the flight
         let url = NSURL(string: "Phase", relativeToURL: baseURL)
         
-        let networkOperation = NetworkOperation(url: url!)
-        networkOperation.downloadJSONFromURL()
+        /* As soon as dynamic Airbus API data is available, uncomment the following two lines. */
+        //let networkOperation = NetworkOperation(url: url!)
+        //networkOperation.downloadJSONFromURL()
+        
+        let seatImageArray = [seatImage0, seatImage1, seatImage2];
+        var i = 0
+        
+        BackendAPI.loadAvailableSeats { seatArray in
+            for seat in seatArray {
+                seatImageArray[i].priceLabel.text = String(seat.price) + " €"
+                i++
+            }
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,10 +53,45 @@ class MainPageViewController: UIViewController {
     }
 
     @IBAction func showAuctionDetail(sender: AnyObject) {
-        performSegueWithIdentifier("showAuctionDetailSegue", sender: sender)
+        /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("auctionSeatViewController") as! AuctionSeatViewController
+        
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        */
+        BackendAPI.getSeat("1A") { seat in
+            self.seat = seat
+            self.performSegueWithIdentifier("showAuctionDetailSegue", sender: sender)
+        }
+    }
+    
+    @IBAction func showAuctionDetail1(sender: AnyObject) {
+        BackendAPI.getSeat("12C") { seat in
+            self.seat = seat
+            self.performSegueWithIdentifier("showAuctionDetailSegue", sender: sender)
+        }
+    }
+    
+    @IBAction func showAuctionDetail2(sender: AnyObject) {
+        BackendAPI.getSeat("27D") { seat in
+            self.seat = seat
+            self.performSegueWithIdentifier("showAuctionDetailSegue", sender: sender)
+        }
     }
     
     
-
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        // Create a variable that you want to send
+        
+        if segue.identifier == "showAuctionDetailSegue" {
+            let destinationViewController = segue.destinationViewController as! AuctionSeatViewController
+            destinationViewController.seat = self.seat
+        }
+        
+    }
 }
 
