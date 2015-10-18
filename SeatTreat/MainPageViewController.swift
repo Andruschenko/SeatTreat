@@ -18,6 +18,7 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var seatImage2: TopSeatView!
     @IBOutlet weak var seatImage3: TopSeatView!
     
+    
     var seat: Seat!
     
     override func viewDidLoad() {
@@ -33,6 +34,20 @@ class MainPageViewController: UIViewController {
         /* As soon as dynamic Airbus API data is available, uncomment the following two lines. */
         //let networkOperation = NetworkOperation(url: url!)
         //networkOperation.downloadJSONFromURL()
+        
+        /*
+        switch self.seat.row {
+        case 1:
+            seatImage0. = "The best seats offered. Luxurious dinner à la carte included."
+        case 12:
+            detailsLabel.text = "Comfortable and quiet business seat so that you can focus on what is important."
+        case 27:
+            detailsLabel.text = "A premium class seat with a bigger screen and tasteful food."
+        default:
+            detailsLabel.text = "Fulfills all basic needs and provides a pleasant experience"
+            
+        }
+*/
         
         let seatImageArray = [seatImage0, seatImage1, seatImage2];
         var i = 0

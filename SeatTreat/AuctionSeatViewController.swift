@@ -13,15 +13,34 @@ class AuctionSeatViewController: UIViewController {
     @IBOutlet weak var currentBidPriceLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var seatNumberLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    
+    @IBOutlet weak var bidAmount: UITextField!
     
     var seat: Seat!
+    
+    @IBAction func bidNowAction(sender: AnyObject) {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currentBidPriceLabel.text = String(self.seat.price) + " €"
-        temperatureLabel.text = String(self.seat.temperature)
-        seatNumberLabel.text = self.seat.column + String(self.seat.row) + ", " + self.seat.seatPosition
+        temperatureLabel.text = String(self.seat.temperature) + "˚"
+        seatNumberLabel.text = self.seat.column + String(self.seat.row) + ", " + self.seat.seatPosition.capitalizedString
+        switch self.seat.row {
+        case 1:
+            detailsLabel.text = "The best seats offered. Luxurious dinner à la carte included."
+        case 12:
+            detailsLabel.text = "Comfortable and quiet business seat so that you can focus on what is important."
+        case 27:
+            detailsLabel.text = "A premium class seat with a bigger screen and tasteful food."
+        default:
+            detailsLabel.text = "Fulfills all basic needs and provides a pleasant experience"
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
