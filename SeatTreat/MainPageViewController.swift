@@ -9,7 +9,7 @@
 import UIKit
 import Font_Awesome_Swift  // change dashes to underscores..
 
-class ViewController: UIViewController {
+class MainPageViewController: UIViewController {
     
     @IBOutlet weak var hotIcon: UILabel!
     
@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func showAuctionDetail(sender: AnyObject) {
+        performSegueWithIdentifier("showAuctionDetailSegue", sender: sender)
+    }
+    
+    
 
 }
 
